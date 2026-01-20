@@ -10,3 +10,4 @@ python-dotenv
 dbt-postgres
 psycopg2
 ultralytics
+sqlalchemy

@@ -9,7 +9,10 @@ This project collects data from public Telegram channels, including messages and
 - `processed/yolo_detections.csv` — YOLO detection results for images
 - `_manifest.json` — summary of messages scraped per channel.
 - `src/scraper.py` — Python script to extract messages and media from Telegram channels.
+- `src/load_raw_telegram.py` — Loads raw Telegram JSON messages into the warehouse staging schema.
 - `src/yolo_detect.py` — Python script to run object detection on images using YOLOv8, classify images, and save results as CSV.
+- `src/load_yolo.py` — Loads YOLO detection CSV into `staging.stg_yolo_detections` for dbt models.
+- `notebooks/image_analysis.ipynb` — Jupyter notebook for exploring YOLO image detection results and analyzing patterns by channel or category.
 - `logs/` — logs and error reports generated during scraping.
 - `.env` — stores Telegram API credentials securely
 - `medical_warehouse/` — dbt project for transforming raw data into a structured warehouse
@@ -112,10 +115,9 @@ Pre-trained YOLOv8 detects general objects; product labels are proxies for medic
 product_labels = ['bottle', 'cup', 'suitcase', 'refrigerator', 'bed', 'tv', 'laptop', 'book']
 ```
 
-
 This allows identification of posts with products or medical equipment even if YOLO doesn’t recognize specific medications.
 
-CSV output is later loaded into the warehouse via fct_image_detections.sql.
+CSV output is later loaded into the warehouse via `fct_image_detections.sql`.
 
 ### Requirements
 
@@ -123,3 +125,4 @@ CSV output is later loaded into the warehouse via fct_image_detections.sql.
 - `telethon` — Telegram API client
 - `dbt-postgres` — dbt adapter for PostgreSQL
 - `psycopg2` — PostgreSQL database driver
+- `ultralytics` — YOLOv8 object detection library
