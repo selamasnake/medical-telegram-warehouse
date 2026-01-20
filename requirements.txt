@@ -11,3 +11,6 @@ dbt-postgres
 psycopg2
 ultralytics
 sqlalchemy
+fastapi 
+uvicorn  
+psycopg2-binary
