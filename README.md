@@ -135,6 +135,23 @@ Available endpoints:
 * `GET /api/reports/visual-content` — Image usage statistics.
 API docs: http://127.0.0.1:8000/docs
 
+### 5 Pipeline Orchestration
+
+This pipeline uses **Dagster** to orchestrate the full ETL and enrichment workflow:
+
+## Ops
+
+- `scrape_telegram_data` – Scrapes messages and images from Telegram channels.
+- `load_raw_to_postgres` – Loads raw JSON into staging tables in the warehouse.
+- `run_dbt_transformations` – Runs dbt models to populate marts/facts.
+- `run_yolo_enrichment` – Runs YOLO detection and classifies images.
+
+## Running the Pipeline
+
+```bash
+dagster dev -f pipeline.py
+```
+
 ### Requirements
 
 - `python-dotenv` — load environment variables
@@ -144,3 +161,4 @@ API docs: http://127.0.0.1:8000/docs
 - `ultralytics` — YOLOv8 object detection library
 - `fastapi, uvicorn` — API server
 - `sqlalchemy` — database ORM
+- `dagster` - pipeline orchestration
