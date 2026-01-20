@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+seaborn
+jupyter
+pytest
+tqdm
+telethon
+python-dotenv
