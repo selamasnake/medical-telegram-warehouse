@@ -7,3 +7,5 @@ pytest
 tqdm
 telethon
 python-dotenv
+dbt-postgres
+psycopg2
