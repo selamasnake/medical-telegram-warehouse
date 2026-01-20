@@ -4,17 +4,15 @@ This project collects data from public Telegram channels, including messages and
 ### Project Structure
 
 - `data/` — raw Telegram messages and images (not tracked in git):
-- `raw/telegram_messages/YYYY-MM-DD/` — JSON files for each channel.
-- `raw/images/{channel_name}/ `— downloaded images per message.
-- `processed/yolo_detections.csv` — YOLO detection results for images
-- `_manifest.json` — summary of messages scraped per channel.
-- `src/scraper.py` — Python script to extract messages and media from Telegram channels.
-- `src/load_raw_telegram.py` — Loads raw Telegram JSON messages into the warehouse staging schema.
-- `src/yolo_detect.py` — Python script to run object detection on images using YOLOv8, classify images, and save results as CSV.
-- `src/load_yolo.py` — Loads YOLO detection CSV into `staging.stg_yolo_detections` for dbt models.
+  - `raw/telegram_messages/YYYY-MM-DD/` — JSON files for each channel.
+  - `raw/images/{channel_name}/ `— downloaded images per message.
+  - `processed/yolo_detections.csv` — YOLO detection results for images
+  - `_manifest.json` — summary of messages scraped per channel.
+- `src/` — Python scripts for data extraction and image processing:
+    - `scraper.py` — Extracts messages and media from Telegram channels.
+    - `load_raw_telegram.py` — Loads raw Telegram JSON into staging tables.
+    - `yolo_detect.py` — Runs YOLOv8 object detection on images.
 - `notebooks/image_analysis.ipynb` — Jupyter notebook for exploring YOLO image detection results and analyzing patterns by channel or category.
-- `logs/` — logs and error reports generated during scraping.
-- `.env` — stores Telegram API credentials securely
 - `medical_warehouse/` — dbt project for transforming raw data into a structured warehouse
   - `dbt_project.yml` — dbt project configuration
   - `profiles.yml` — database connection settings
@@ -32,6 +30,13 @@ This project collects data from public Telegram channels, including messages and
     - `assert_positive_views.sql`
     - `assert_channel_fk.sql`
     - `assert_date_fk.sql`
+- api/ — FastAPI application exposing analytical endpoints:
+    - `main.py` — API routes
+    - `crud.py` — Database queries
+    - `schemas.py` — Request/response validation models
+    - `database.py` — Database connection setup
+- `logs/` — logs and error reports generated during scraping.
+- `.env` — stores Telegram API credentials securely
 
 ### How to Run
 
@@ -116,8 +121,19 @@ product_labels = ['bottle', 'cup', 'suitcase', 'refrigerator', 'bed', 'tv', 'lap
 ```
 
 This allows identification of posts with products or medical equipment even if YOLO doesn’t recognize specific medications.
-
 CSV output is later loaded into the warehouse via `fct_image_detections.sql`.
+
+### 4. Analytical API
+Start the FastAPI server:
+```bash
+uvicorn api.main:app --reload
+```
+Available endpoints:
+* `GET /api/reports/top-products?limit=10` — Top mentioned products.
+* `GET /api/channels/{channel_name}/activity` — Posting activity per channel.
+* `GET /api/search/messages?query=paracetamol&limit=20` — Search messages by keyword.
+* `GET /api/reports/visual-content` — Image usage statistics.
+API docs: http://127.0.0.1:8000/docs
 
 ### Requirements
 
@@ -126,3 +142,5 @@ CSV output is later loaded into the warehouse via `fct_image_detections.sql`.
 - `dbt-postgres` — dbt adapter for PostgreSQL
 - `psycopg2` — PostgreSQL database driver
 - `ultralytics` — YOLOv8 object detection library
+- `fastapi, uvicorn` — API server
+- `sqlalchemy` — database ORM
