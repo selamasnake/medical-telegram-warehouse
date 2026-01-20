@@ -247,9 +247,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     TARGET_CHANNELS = [
-        # "@CheMed123",
-        # "@lobelia4cosmetics",
-        # "@tikvahpharma",
+        "@CheMed123",
+        "@lobelia4cosmetics",
+        "@tikvahpharma",
         "@pharmaceuticals_sales",
         "@Ethiopharmaceuticals",
         "@PharmaceuticalandMedicalgroup" ]
