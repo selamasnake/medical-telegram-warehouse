@@ -4,7 +4,7 @@ medical_warehouse:
       dbname: "{{ env_var('DB_NAME') }}"
       host: "{{ env_var('DB_HOST') }}"
       password: "{{ env_var('DB_PASSWORD') }}"
-      port: "{{ env_var('DB_PORT') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
       schema: "{{ env_var('DB_SCHEMA') }}"
       threads: 1
       type: postgres
