@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_telegram_messages
+    description: "Staging table for Telegram messages, cleans raw data"
+    columns:
+      - name: message_id
+        description: "Unique ID for each message"
+        tests:
+          - not_null
+          - unique
+      - name: message_text
+        description: "Content of the Telegram message"
+        tests:
+          - not_null
+      - name: message_date
+        description: "Date the message was posted"
+        tests:
+          - not_null
