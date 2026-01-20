@@ -6,8 +6,10 @@ This project collects data from public Telegram channels, including messages and
 - `data/` — raw Telegram messages and images (not tracked in git):
 - `raw/telegram_messages/YYYY-MM-DD/` — JSON files for each channel.
 - `raw/images/{channel_name}/ `— downloaded images per message.
+- `processed/yolo_detections.csv` — YOLO detection results for images
 - `_manifest.json` — summary of messages scraped per channel.
 - `src/scraper.py` — Python script to extract messages and media from Telegram channels.
+- `src/yolo_detect.py` — Python script to run object detection on images using YOLOv8, classify images, and save results as CSV.
 - `logs/` — logs and error reports generated during scraping.
 - `.env` — stores Telegram API credentials securely
 - `medical_warehouse/` — dbt project for transforming raw data into a structured warehouse
@@ -83,6 +85,37 @@ dbt docs serve
 - Fact: fct_messages
 - All critical columns are validated with not_null and unique tests.
 - Custom tests enforce business rules (no future messages, non-empty texts, positive view counts).
+
+### 3. Image Enrichment with YOLO
+Run object detection on all images:
+```bash
+python src/yolo_detect.py
+```
+Outputs:
+
+CSV file → `data/processed/yolo_detections.csv`
+
+Columns: `image_name, channel_name, detected_objects, max_confidence, image_category`
+
+image_category is classified as:
+
+- promotional — person + product
+- product_display — product only
+- lifestyle — person only
+- other — neither person nor product detected
+
+Notes
+
+Pre-trained YOLOv8 detects general objects; product labels are proxies for medical items:
+
+```bash
+product_labels = ['bottle', 'cup', 'suitcase', 'refrigerator', 'bed', 'tv', 'laptop', 'book']
+```
+
+
+This allows identification of posts with products or medical equipment even if YOLO doesn’t recognize specific medications.
+
+CSV output is later loaded into the warehouse via fct_image_detections.sql.
 
 ### Requirements
 
