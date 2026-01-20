@@ -1,0 +1,440 @@
+[0m10:53:06.811842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110166cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107930ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079317c0>]}
+
+
+============================== 10:53:06.814977 | 85a8fac4-4955-49b1-b42b-58064ea55868 ==============================
+[0m10:53:06.814977 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:53:06.815320 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': '/Users/hazel/.dbt', 'version_check': 'True', 'use_colors': 'True', 'write_json': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'printer_width': '80', 'no_print': 'None', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'quiet': 'False', 'static_parser': 'True', 'empty': 'None', 'log_path': 'logs', 'invocation_command': 'dbt init medical_warehouse', 'warn_error': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'indirect_selection': 'eager'}
+[0m10:53:06.825578 [info ] [MainThread]: Creating dbt configuration folder at /Users/hazel/.dbt
+[0m10:53:06.826724 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m10:53:06.831145 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:53:06.831408 [info ] [MainThread]: Setting up your profile.
+[0m10:54:39.760134 [error] [MainThread]: Encountered an error:
+
+[0m10:54:39.777810 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m10:54:39.821681 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 93.05531, "process_in_blocks": "0", "process_kernel_time": 0.197695, "process_mem_max_rss": "121470976", "process_out_blocks": "0", "process_user_time": 1.481307}
+[0m10:54:39.822286 [debug] [MainThread]: Command `dbt init` failed at 10:54:39.822208 after 93.06 seconds
+[0m10:54:39.823057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102d5ecc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103c2ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1112ed520>]}
+[0m10:54:39.823918 [debug] [MainThread]: Flushing usage events
+[0m10:54:40.724074 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:55:13.351333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cb6030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105712000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105171880>]}
+
+
+============================== 10:55:13.354742 | c23e787a-e1b0-49bc-937b-b610864006c4 ==============================
+[0m10:55:13.354742 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:55:13.355101 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'quiet': 'False', 'profiles_dir': '/Users/hazel/.dbt', 'warn_error': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'fail_fast': 'False', 'target_path': 'None', 'no_print': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'invocation_command': 'dbt init medical_warehouse', 'static_parser': 'True', 'printer_width': '80', 'log_format': 'default', 'write_json': 'True', 'log_path': 'logs'}
+[0m10:55:13.364953 [info ] [MainThread]: A project called medical_warehouse already exists here.
+[0m10:55:13.366628 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.055449624, "process_in_blocks": "0", "process_kernel_time": 0.140185, "process_mem_max_rss": "120225792", "process_out_blocks": "0", "process_user_time": 1.302881}
+[0m10:55:13.366968 [debug] [MainThread]: Command `dbt init` succeeded at 10:55:13.366908 after 0.06 seconds
+[0m10:55:13.367172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1000d6cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cb6030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057f7b90>]}
+[0m10:55:13.367374 [debug] [MainThread]: Flushing usage events
+[0m10:55:14.270506 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:55:29.166455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108aa68d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b05d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e2cb30>]}
+
+
+============================== 10:55:29.169691 | 5a109cad-3733-483f-8846-ec3c4f21a9f8 ==============================
+[0m10:55:29.169691 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:55:29.170063 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': '/Users/hazel/.dbt', 'debug': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'empty': 'None', 'log_path': 'logs', 'cache_selected_only': 'False', 'invocation_command': 'dbt init medical_warehouse', 'log_format': 'default', 'quiet': 'False', 'no_print': 'None', 'target_path': 'None', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'indirect_selection': 'eager', 'introspect': 'True', 'warn_error': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False'}
+[0m10:55:29.180297 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m10:55:29.184694 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:55:29.184928 [info ] [MainThread]: Setting up your profile.
+[0m10:56:09.049993 [error] [MainThread]: Encountered an error:
+
+[0m10:56:09.059672 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m10:56:09.064536 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 39.93482, "process_in_blocks": "0", "process_kernel_time": 0.153528, "process_mem_max_rss": "124895232", "process_out_blocks": "0", "process_user_time": 1.314673}
+[0m10:56:09.065636 [debug] [MainThread]: Command `dbt init` failed at 10:56:09.065456 after 39.94 seconds
+[0m10:56:09.066768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b31340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a693fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a001fd0>]}
+[0m10:56:09.067631 [debug] [MainThread]: Flushing usage events
+[0m10:56:09.983707 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:56:24.388735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108593ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093bcec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093bd370>]}
+
+
+============================== 10:56:24.391750 | b3ed2781-9a30-4674-9b02-27d05b2e4285 ==============================
+[0m10:56:24.391750 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:56:24.392098 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'indirect_selection': 'eager', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/Users/hazel/.dbt', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'debug': 'False', 'version_check': 'True', 'static_parser': 'True', 'warn_error': 'None', 'invocation_command': 'dbt init medical_warehouse', 'write_json': 'True', 'log_path': 'logs', 'target_path': 'None', 'log_format': 'default', 'introspect': 'True', 'use_colors': 'True', 'printer_width': '80'}
+[0m10:56:24.402183 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m10:56:24.418749 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:56:24.419109 [info ] [MainThread]: Setting up your profile.
+[0m10:57:16.830883 [error] [MainThread]: Encountered an error:
+
+[0m10:57:16.842722 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m10:57:16.847961 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 52.49764, "process_in_blocks": "0", "process_kernel_time": 0.155088, "process_mem_max_rss": "124403712", "process_out_blocks": "0", "process_user_time": 1.332345}
+[0m10:57:16.849040 [debug] [MainThread]: Command `dbt init` failed at 10:57:16.848859 after 52.50 seconds
+[0m10:57:16.850192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10297acc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cf3800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e76480>]}
+[0m10:57:16.851120 [debug] [MainThread]: Flushing usage events
+[0m10:57:17.763603 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:03:33.577788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a2f200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d8b740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060e6330>]}
+
+
+============================== 11:03:33.581162 | fd69118e-8360-470a-8967-ba67e91a714e ==============================
+[0m11:03:33.581162 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:03:33.581640 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'fail_fast': 'False', 'log_format': 'default', 'quiet': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'introspect': 'True', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'no_print': 'None', 'use_colors': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'profiles_dir': '/Users/hazel/.dbt', 'log_path': 'logs', 'invocation_command': 'dbt init medical_warehouse', 'write_json': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'indirect_selection': 'eager'}
+[0m11:03:33.591887 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:03:33.596346 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:03:33.596693 [info ] [MainThread]: Setting up your profile.
+[0m11:04:37.596335 [info ] [MainThread]: Profile medical_warehouse written to /Users/hazel/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:04:37.603803 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 64.0501, "process_in_blocks": "0", "process_kernel_time": 0.159219, "process_mem_max_rss": "120553472", "process_out_blocks": "0", "process_user_time": 1.358338}
+[0m11:04:37.605304 [debug] [MainThread]: Command `dbt init` succeeded at 11:04:37.604916 after 64.05 seconds
+[0m11:04:37.607840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100c6ecc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107862fc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107863ce0>]}
+[0m11:04:37.608850 [debug] [MainThread]: Flushing usage events
+[0m11:04:38.499510 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:04:50.180976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114102d20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114659d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1137280b0>]}
+
+
+============================== 11:04:50.186577 | aabb1c36-4168-45c8-a3d6-9f477d6f368a ==============================
+[0m11:04:50.186577 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:04:50.186989 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug', 'profiles_dir': '/Users/hazel/.dbt', 'introspect': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'fail_fast': 'False', 'log_path': 'logs', 'quiet': 'False', 'empty': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'version_check': 'True', 'debug': 'False', 'partial_parse': 'True', 'use_colors': 'True', 'warn_error': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True'}
+[0m11:04:50.197274 [info ] [MainThread]: dbt version: 1.11.2
+[0m11:04:50.197566 [info ] [MainThread]: python version: 3.12.0
+[0m11:04:50.197737 [info ] [MainThread]: python path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/bin/python3.12
+[0m11:04:50.197886 [info ] [MainThread]: os info: macOS-14.4.1-arm64-arm-64bit
+[0m11:04:50.239829 [info ] [MainThread]: Using profiles dir at /Users/hazel/.dbt
+[0m11:04:50.240174 [info ] [MainThread]: Using profiles.yml file at /Users/hazel/.dbt/profiles.yml
+[0m11:04:50.240343 [info ] [MainThread]: Using dbt_project.yml file at /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/dbt_project.yml
+[0m11:04:50.241524 [info ] [MainThread]: adapter type: postgres
+[0m11:04:50.241744 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:04:50.241917 [info ] [MainThread]: Configuration:
+[0m11:04:50.242121 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:04:50.242337 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:04:50.242540 [info ] [MainThread]: Required dependencies:
+[0m11:04:50.243318 [debug] [MainThread]: Executing "git --help"
+[0m11:04:50.263762 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:04:50.264349 [debug] [MainThread]: STDERR: "b''"
+[0m11:04:50.264565 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:04:50.264743 [info ] [MainThread]: Connection:
+[0m11:04:50.264928 [info ] [MainThread]:   host: localhost
+[0m11:04:50.265082 [info ] [MainThread]:   port: 5432
+[0m11:04:50.265215 [info ] [MainThread]:   user: medical_user
+[0m11:04:50.265352 [info ] [MainThread]:   database: medical_dw
+[0m11:04:50.265483 [info ] [MainThread]:   schema: medical_password
+[0m11:04:50.265612 [info ] [MainThread]:   connect_timeout: 10
+[0m11:04:50.265754 [info ] [MainThread]:   role: None
+[0m11:04:50.265882 [info ] [MainThread]:   search_path: None
+[0m11:04:50.266018 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:04:50.266152 [info ] [MainThread]:   sslmode: None
+[0m11:04:50.266277 [info ] [MainThread]:   sslcert: None
+[0m11:04:50.266412 [info ] [MainThread]:   sslkey: None
+[0m11:04:50.266538 [info ] [MainThread]:   sslrootcert: None
+[0m11:04:50.266721 [info ] [MainThread]:   application_name: dbt
+[0m11:04:50.266921 [info ] [MainThread]:   retries: 1
+[0m11:04:50.267290 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:04:50.415164 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:04:50.450374 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:04:50.450618 [debug] [MainThread]: On debug: select 1 as id
+[0m11:04:50.450774 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:04:50.579966 [debug] [MainThread]: SQL status: SELECT 1 in 0.129 seconds
+[0m11:04:50.581203 [debug] [MainThread]: On debug: Close
+[0m11:04:50.581641 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:04:50.582010 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:04:50.582307 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/dbt_project.yml> not found
+
+[0m11:04:50.584758 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.44841662, "process_in_blocks": "0", "process_kernel_time": 0.181364, "process_mem_max_rss": "134610944", "process_out_blocks": "0", "process_user_time": 1.414967}
+[0m11:04:50.585242 [debug] [MainThread]: Command `dbt debug` failed at 11:04:50.585147 after 0.45 seconds
+[0m11:04:50.585568 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:04:50.585907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10293acc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114102d20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114985520>]}
+[0m11:04:50.586296 [debug] [MainThread]: Flushing usage events
+[0m11:04:51.376138 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:07:59.134185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f4dca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10746a2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081e81d0>]}
+
+
+============================== 11:07:59.137609 | 1a715456-8191-42ad-bd8e-6a1fc197d77b ==============================
+[0m11:07:59.137609 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:07:59.137967 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'printer_width': '80', 'introspect': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'no_print': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt init medical_warehouse', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_format': 'default', 'log_path': 'logs', 'empty': 'None', 'profiles_dir': '/Users/hazel/.dbt', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'partial_parse': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'debug': 'False'}
+[0m11:07:59.148546 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:07:59.152680 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:07:59.152907 [info ] [MainThread]: Setting up your profile.
+[0m11:08:07.865350 [error] [MainThread]: Encountered an error:
+
+[0m11:08:07.870783 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 248, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 211, in check_if_can_write_profile
+    response = click.confirm(
+               ^^^^^^^^^^^^^^
+  File "/Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/click/termui.py", line 245, in confirm
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m11:08:07.874572 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 8.778544, "process_in_blocks": "0", "process_kernel_time": 0.138805, "process_mem_max_rss": "119767040", "process_out_blocks": "0", "process_user_time": 1.301182}
+[0m11:08:07.876114 [debug] [MainThread]: Command `dbt init` failed at 11:08:07.875893 after 8.78 seconds
+[0m11:08:07.876874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fdd340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081eac90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081b7b30>]}
+[0m11:08:07.877509 [debug] [MainThread]: Flushing usage events
+[0m11:08:08.756293 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:21.988451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079bcf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10819b230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10819adb0>]}
+
+
+============================== 11:08:21.991639 | 566896bc-014d-4182-8637-edd50fed9bcc ==============================
+[0m11:08:21.991639 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:08:21.991981 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'debug': 'False', 'empty': 'None', 'use_colors': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'target_path': 'None', 'fail_fast': 'False', 'warn_error': 'None', 'invocation_command': 'dbt init medical_warehouse', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'profiles_dir': '/Users/hazel/.dbt', 'indirect_selection': 'eager', 'quiet': 'False', 'version_check': 'True', 'static_parser': 'True'}
+[0m11:08:22.001905 [debug] [MainThread]: Starter project path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:08:22.006044 [info ] [MainThread]: 
+Your new dbt project "medical_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:08:22.006292 [info ] [MainThread]: Setting up your profile.
+[0m11:09:30.667345 [info ] [MainThread]: Profile medical_warehouse written to /Users/hazel/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:09:30.676449 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 68.7255, "process_in_blocks": "0", "process_kernel_time": 0.154419, "process_mem_max_rss": "121651200", "process_out_blocks": "0", "process_user_time": 1.335916}
+[0m11:09:30.677861 [debug] [MainThread]: Command `dbt init` succeeded at 11:09:30.677633 after 68.73 seconds
+[0m11:09:30.679114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102a1ecc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10819adb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106009400>]}
+[0m11:09:30.679890 [debug] [MainThread]: Flushing usage events
+[0m11:09:31.579064 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:09:38.396240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105053140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a1ecc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a1e960>]}
+
+
+============================== 11:09:38.399390 | 795ad607-c736-40f3-a631-39609eea0c95 ==============================
+[0m11:09:38.399390 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:09:38.399758 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'version_check': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'quiet': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/hazel/.dbt', 'use_experimental_parser': 'False', 'empty': 'None', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'log_path': 'logs', 'introspect': 'True', 'partial_parse': 'True', 'fail_fast': 'False', 'printer_width': '80', 'write_json': 'True', 'use_colors': 'True', 'warn_error': 'None'}
+[0m11:09:38.409670 [info ] [MainThread]: dbt version: 1.11.2
+[0m11:09:38.409923 [info ] [MainThread]: python version: 3.12.0
+[0m11:09:38.410088 [info ] [MainThread]: python path: /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/.venv/bin/python3.12
+[0m11:09:38.410246 [info ] [MainThread]: os info: macOS-14.4.1-arm64-arm-64bit
+[0m11:09:38.440812 [info ] [MainThread]: Using profiles dir at /Users/hazel/.dbt
+[0m11:09:38.441113 [info ] [MainThread]: Using profiles.yml file at /Users/hazel/.dbt/profiles.yml
+[0m11:09:38.441281 [info ] [MainThread]: Using dbt_project.yml file at /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/dbt_project.yml
+[0m11:09:38.441625 [info ] [MainThread]: adapter type: postgres
+[0m11:09:38.441831 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:09:38.442000 [info ] [MainThread]: Configuration:
+[0m11:09:38.442151 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:09:38.442289 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:09:38.442425 [info ] [MainThread]: Required dependencies:
+[0m11:09:38.442604 [debug] [MainThread]: Executing "git --help"
+[0m11:09:38.450790 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:09:38.451363 [debug] [MainThread]: STDERR: "b''"
+[0m11:09:38.451578 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:09:38.451761 [info ] [MainThread]: Connection:
+[0m11:09:38.451930 [info ] [MainThread]:   host: localhost
+[0m11:09:38.452066 [info ] [MainThread]:   port: 5432
+[0m11:09:38.452198 [info ] [MainThread]:   user: medical_user
+[0m11:09:38.452322 [info ] [MainThread]:   database: medical_dw
+[0m11:09:38.452447 [info ] [MainThread]:   schema: medical_warehouse
+[0m11:09:38.452577 [info ] [MainThread]:   connect_timeout: 10
+[0m11:09:38.452708 [info ] [MainThread]:   role: None
+[0m11:09:38.452830 [info ] [MainThread]:   search_path: None
+[0m11:09:38.453034 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:09:38.453244 [info ] [MainThread]:   sslmode: None
+[0m11:09:38.453397 [info ] [MainThread]:   sslcert: None
+[0m11:09:38.453539 [info ] [MainThread]:   sslkey: None
+[0m11:09:38.453670 [info ] [MainThread]:   sslrootcert: None
+[0m11:09:38.453798 [info ] [MainThread]:   application_name: dbt
+[0m11:09:38.453926 [info ] [MainThread]:   retries: 1
+[0m11:09:38.454254 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:09:38.514647 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:09:38.538800 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:09:38.539034 [debug] [MainThread]: On debug: select 1 as id
+[0m11:09:38.539186 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:09:38.563373 [debug] [MainThread]: SQL status: SELECT 1 in 0.024 seconds
+[0m11:09:38.564093 [debug] [MainThread]: On debug: Close
+[0m11:09:38.564304 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:09:38.564493 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:09:38.564640 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/dbt_project.yml> not found
+
+[0m11:09:38.565630 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.2076453, "process_in_blocks": "0", "process_kernel_time": 0.175597, "process_mem_max_rss": "136183808", "process_out_blocks": "0", "process_user_time": 1.405765}
+[0m11:09:38.565923 [debug] [MainThread]: Command `dbt debug` failed at 11:09:38.565865 after 0.21 seconds
+[0m11:09:38.566131 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:09:38.566346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102292cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aec110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aec0b0>]}
+[0m11:09:38.566587 [debug] [MainThread]: Flushing usage events
+[0m11:09:39.338299 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:08:26.449630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1230fd730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123980770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1239803e0>]}
+
+
+============================== 12:08:26.453424 | 7e0b7dbd-35e8-405a-9448-7cbf9d0b7ff3 ==============================
+[0m12:08:26.453424 [info ] [MainThread]: Running with dbt=1.11.2
+[0m12:08:26.453766 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'partial_parse': 'True', 'debug': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'quiet': 'False', 'profiles_dir': '/Users/hazel/.dbt', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'target_path': 'None', 'empty': 'None', 'log_format': 'default', 'fail_fast': 'False', 'invocation_command': 'dbt test --select test', 'use_experimental_parser': 'False', 'version_check': 'True', 'write_json': 'True', 'no_print': 'None', 'printer_width': '80', 'use_colors': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True'}
+[0m12:08:26.454111 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/hazel/Desktop/Self Study/kiam8/medical-telegram-warehouse/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:08:26.455678 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.044478126, "process_in_blocks": "0", "process_kernel_time": 0.134994, "process_mem_max_rss": "120291328", "process_out_blocks": "0", "process_user_time": 1.292812}
+[0m12:08:26.455954 [debug] [MainThread]: Command `dbt test` failed at 12:08:26.455907 after 0.04 seconds
+[0m12:08:26.456157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123900740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1236486e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12394ff20>]}
+[0m12:08:26.456334 [debug] [MainThread]: Flushing usage events
+[0m12:08:27.316715 [debug] [MainThread]: An error was encountered while trying to flush usage events
